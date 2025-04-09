@@ -1,0 +1,96 @@
+/* Reset de margem e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    padding: 20px;
+}
+
+/* Container centralizado */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Mensagem de status */
+.status-message {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Formulário */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Campos do formulário */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Botões */
+button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Botão de cancelar */
+.cancel-btn {
+    background-color: #dc3545;
+}
+
+.cancel-btn:hover {
+    background-color: #c82333;
+}

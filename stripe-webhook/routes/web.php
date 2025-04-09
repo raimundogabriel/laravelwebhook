@@ -1,10 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\InscricaoController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 Route::get('/webhook', function () {
     return response()->json(['message' => 'Webhook endpoint']);
 });
@@ -27,3 +26,16 @@ Route::get('/webhook/stripe/test/{id}/details/{detail}/extra/{extra}', function 
     return response()->json(['message' => 'Stripe Webhook Test endpoint with ID: ' . $id . ' and detail: ' . $detail . ' and extra: ' . $extra]);
 });
 Route::post('/webhook', 'WebhookController@handleWebhook');
+
+Route::post('/webhook/stripe', [StripeWebhookController::class, 'handle']);
+
+// Rota para a página principal (onde os botões estarão)
+Route::get('/', function () {
+    return view('inscricao');
+});
+
+// Rota para inscrição
+Route::post('/inscricao', [InscricaoController::class, 'inscrever'])->name('inscricao');
+
+// Rota para cancelar inscrição
+Route::post('/cancelar-inscricao', [InscricaoController::class, 'cancelarInscricao'])->name('cancelar-inscricao');
